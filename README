@@ -1,0 +1,40 @@
+NAME: Matthew Paterno
+EMAIL: mpaterno@g.ucla.edu
+ID: 904756085
+
+SLIPDAYS: 0
+
+Included in the tar is the C source code, lab0.c, which implements an i/o redirection. 
+There are four optional options. Option —segfault forces a segmentation by dereferencing 
+a null pointer. Option —catch catches the segmentation fault. Option —input copies the 
+contents of a text file and redirects it to standard out. Option —output takes the 
+standard out. 
+
+The Makefile compiles, checks, and cleans the package. Check runs a smoke check that 
+tests the basic functionalities of the program.
+
+Two screenshots of GDB are included in the tar. Backtrace.png is a screenshot checking 
+the segfault and the associated stack-trace. Breakpoint.png is showing the variable 
+inspection. 
+
+catchTest: Evaluates a correct segfault catch when option —c is used. 
+
+ioTest: Evaluates the main routine by checking if the program returns zero.
+
+readTest: Evaluates whether the program handles an input file with incorrect read 
+permissions correctly.
+
+writeTest: Evaluates whether the program handles issues creating a file correctly. 
+
+copyTest: Confirms the contents of an input text file matches the output text 
+file correctly.
+
+Process
+
+While the final routine was relatively straightforward, I had initial difficulty
+understanding the redirection of getopt(). While my program was functioning according
+to the example in (https://www.gnu.org/software/libc/manual/html_node/Getopt-Long-Option-Example.html),
+it took plenty of trial and error to understand what exactly was happening. I was also 
+unfamiliar writing my own test statements in the Makefile.
+(https://unix.stackexchange.com/questions/270778/how-to-write-exactly-bash-scripts-into-makefiles)
+One example was using the double dollar sign.
